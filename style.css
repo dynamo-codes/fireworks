@@ -1,0 +1,19 @@
+body {
+	margin: 0px;
+	margin-top: 0px;
+	overflow-y: none;
+	z-index: 1;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+h1 {
+	z-index: 2;
+	position: absolute;
+	left: 0;
+	top: 0;
+	color: white;
+	font-family: helvetica;
+  text-align: center;
+}
