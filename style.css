@@ -1,7 +1,7 @@
 body {
 	margin: 0px;
 	margin-top: 0px;
-	overflow-y: none;
+	overflow: hidden;
 	z-index: 1;
 	position: absolute;
 	left: 0;
@@ -15,5 +15,5 @@ h1 {
 	top: 0;
 	color: white;
 	font-family: helvetica;
-  text-align: center;
+	margin-left: calc(50% - 100px);
 }
