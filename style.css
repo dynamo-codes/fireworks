@@ -9,11 +9,16 @@ body {
 }
 
 h1 {
-	z-index: 5;
+	z-index: 2;
 	position: absolute;
 	left: 0;
 	top: 0;
 	color: white;
 	font-family: helvetica;
 	margin-left: calc(50% - 100px);
+	text-align: center;
+}
+
+p {
+	font-size: 20px;
 }
