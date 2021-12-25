@@ -41,13 +41,14 @@ document.addEventListener('touch', onMouseUpdate);
 document.addEventListener('mousedown', onMouseUpdate);
 var colors;
 
-var colorsl = [["red", "coral", "yellow", "orange"], ["navy", "blue", "teal", "dodgerblue"]]
+var colorsl = [["#FF2424", "coral", "#E7FF2E", "orange"], ["#0A81FF", "teal", "#00FFB3", "dodgerblue"]]
 //var colorsl = [["red", "coral", "yellow", "orange", "navy", "blue", "teal", "dodgerblue"]];
 var c = "hsl(" + randint(0, 360).toString() + "0, 100%, 67%, 1)";
 
 function onMouseUpdate(e) {
   colors = colorsl[Math.random() * colorsl.length |0];
   maininter = true;
+  document.getElementById("m").style.marginLeft = "calc(50% - 155px)"; document.getElementById("m").style.color = colors[Math.random() * colors.length |0];document.getElementById("m").innerHTML = "Happy New Year</br></br>2022</br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>From the Rao Family!";
   setTimeout(function() {maininter = false;}, 600)
   mx = e.pageX;
   my = e.pageY;
@@ -92,9 +93,6 @@ function component(width, color, x, y) {
         ctx.globalAlpha = 1;
         this.size = this.stimer;
         ctx.fillStyle = color;
-        document.getElementById("m").style.marginLeft = "calc(50% - 155px)";
-        document.getElementById("m").style.color = color;
-        document.getElementById("m").innerHTML = "Happy New Year</br></br>2022</br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>From the Rao Family!";
         ctx.strokeStyle = color;
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
