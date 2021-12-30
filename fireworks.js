@@ -48,7 +48,7 @@ var c = "hsl(" + randint(0, 360).toString() + "0, 100%, 67%, 1)";
 function onMouseUpdate(e) {
   colors = colorsl[Math.random() * colorsl.length |0];
   maininter = true;
-  document.getElementById("m").style.marginLeft = "calc(50% - 155px)"; document.getElementById("m").style.color = colors[Math.random() * colors.length |0];document.getElementById("m").innerHTML = "Happy New Year</br></br>2022</br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>From the Rao Family!";
+  document.getElementById("m").style.marginLeft = "calc(50% - 155px)"; document.getElementById("m").style.color = colors[Math.random() * colors.length |0];document.getElementById("m").innerHTML = "Happy New Year</br></br>2022";
   setTimeout(function() {maininter = false;}, 600)
   mx = e.pageX;
   my = e.pageY;
