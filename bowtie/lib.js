@@ -2,6 +2,9 @@ var canvas = document.createElement("CANVAS")
 document.getElementById("game").appendChild(this.canvas)
 canvas.height = 500;
 canvas.width = 500;
+var mouseX = 0;
+var mousey = 0;
+
 
 var Canvas = {
 	fill: function() {
@@ -30,6 +33,16 @@ function line(x,y,x1,y1) {
 	ctx.moveTo(x, y);
 	ctx.lineTo(x1, y1);
 	ctx.stroke();
+}
+
+function line3d(x,y,z,x1,y1,z1) {
+	i1 = flatten(x,y,z);
+	i2 = flatten(x1,y1,z1)
+	ctx.beginPath();
+	ctx.moveTo(i1[0], i1[1]);
+	ctx.lineTo(i2[0], i2[1]);
+	ctx.stroke();
+	ctx.fill()
 }
 
 function color(c) {
@@ -105,11 +118,11 @@ function Vector3(x=0,y=0,z=0){
 }
 
 function flatten(x,y,z) {
-	return [x/z,y/z]
+	return [(x/z)*50,(y/z)*50]
 }
 
 function point3d(x,y,z) {
-	ellipse(flatten(x,y,z)[0],flatten(x,y,z)[1], r=5)
+	ellipse(flatten(x,y,z)[0],flatten(x,y,z)[1], r=2)
 }
 
 function point(x,y) {
