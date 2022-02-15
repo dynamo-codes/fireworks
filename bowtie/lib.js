@@ -27,9 +27,9 @@ function noloop() {
 
 function line(x,y,x1,y1) {
 	ctx.beginPath();
-    ctx.moveTo(x, y);
-    ctx.lineTo(x1, y1);
-    ctx.stroke();
+	ctx.moveTo(x, y);
+	ctx.lineTo(x1, y1);
+	ctx.stroke();
 }
 
 function color(c) {
@@ -63,8 +63,8 @@ function restore() {
 
 function ellipse(x,y,r=15) {
 	ctx.beginPath();
-    ctx.arc(x, y, r, 0, 2 * Math.PI, false);
-    ctx.fill();
+	ctx.arc(x, y, r, 0, 2 * Math.PI, false);
+	ctx.fill();
 }
 
 function Vector(){
