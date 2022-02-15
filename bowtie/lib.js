@@ -108,6 +108,14 @@ function flatten(x,y,z) {
 	return [x/z,y/z]
 }
 
+function point3d(x,y,z) {
+	ellipse(flatten(x,y,z)[0],flatten(x,y,z)[1])
+}
+
+function point(x,y) {
+	ellipse(x,y)
+}
+
 function mupdate() {
 	if (clear) {
 	    ctx.clearRect(0, 0, canvas.width, canvas.height)
