@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<div id="game"></div>
+<script type="text/javascript">
+
+var cx = 0,cy=0;
+var mouseX = 0;
+var mousey = 0;
+var p = 
+[
+	[(m+10)-cx,(m+10)-cy,5],
+	[(m-10)-cx,(m+10)-cy,5],
+	[(m+10)-cx,(m-10)-cy,5],
+	[(m-10)-cx,(m-10)-cy,5],
+
+	[(m+10)-cx,(m+10)-cy,8],
+	[(m-10)-cx,(m+10)-cy,8],
+	[(m+10)-cx,(m-10)-cy,8],
+	[(m-10)-cx,(m-10)-cy,8]
+]
+
+document.addEventListener("mousemove", function(e){cx = ((e.clientX)-250)/20;cy = ((e.clientY)-250)/20;});
+
+function init() {
+}
+
+var m = 0
+
+function update() {
+	render_cube()
+}
+
+
+function render_cube() {
+	//cx-=1%20
+	//cy+=1%250
+	save()
+	translate(250,250)
+	color("black")
+
+	for (i=1; i<1; i++) {
+		point3d((m+10)-cx,(m+10)-cy,i)
+		//line3d((m+10)-cx,(m+10)-cy,5,(m-10)-cx,(m+10)-cy,i)
+		point3d((m-10)-cx,(m+10)-cy,i)
+		//line3d((m-10)-cx,(m+10)-cy,5,(m-10)-cx,(m-10)-cy,i)
+		point3d((m-10)-cx,(m-10)-cy,i)
+		//line3d((m-10)-cx,(m-10)-cy,5,(m+10)-cx,(m-10)-cy,i)
+		point3d((m+10)-cx,(m-10)-cy,i)
+		//line3d((m+10)-cx,(m-10)-cy,5, (m+10)-cx,(m+10)-cy,i)
+	}	
+	point3d((m+10)-cx,(m+10)-cy,5)
+	line3d((m+10)-cx,(m+10)-cy,5,(m-10)-cx,(m+10)-cy,5)
+	point3d((m-10)-cx,(m+10)-cy,5)
+	line3d((m-10)-cx,(m+10)-cy,5,(m-10)-cx,(m-10)-cy,5)
+	point3d((m-10)-cx,(m-10)-cy,5)
+	line3d((m-10)-cx,(m-10)-cy,5,(m+10)-cx,(m-10)-cy,5)
+	point3d((m+10)-cx,(m-10)-cy,5)
+	line3d((m+10)-cx,(m-10)-cy,5, (m+10)-cx,(m+10)-cy,5)
+	//restore()
+
+	//line3d((m+10)-cx,(m-10)-cy,5, (m-10)-cx,(m-10)-cy,5)
+	//line3d((m-10)-cx,(m+10)-cy,5, (m+10)-cx,(m-10)-cy,5)
+	//line3d((m+10)-cx,(m+10)-cy,5, (m-10)-cx,(m+10)-cy,5)
+	//line3d((m+10)-cx,(m+10)-cy,5, (m-10)-cx,(m-10)-cy,5)
+
+	//--------------------------\\
+
+	point3d((m+10)-cx,(m+10)-cy,8)
+	line3d((m+10)-cx,(m+10)-cy,8,(m-10)-cx,(m+10)-cy,8)
+	point3d((m-10)-cx,(m+10)-cy,8)
+	line3d((m-10)-cx,(m+10)-cy,8,(m-10)-cx,(m-10)-cy,8)
+	point3d((m-10)-cx,(m-10)-cy,8)
+	line3d((m-10)-cx,(m-10)-cy,8,(m+10)-cx,(m-10)-cy,8)
+	point3d((m+10)-cx,(m-10)-cy,8)
+	line3d((m+10)-cx,(m-10)-cy,8,(m+10)-cx,(m+10)-cy,8)
+
+	line3d((m+10)-cx,(m+10)-cy,5,(m+10)-cx,(m+10)-cy,8)
+	line3d((m-10)-cx,(m+10)-cy,5,(m-10)-cx,(m+10)-cy,8)
+	line3d((m-10)-cx,(m-10)-cy,5,(m-10)-cx,(m-10)-cy,8)
+	line3d((m+10)-cx,(m-10)-cy,5,(m+10)-cx,(m-10)-cy,8)
+	
+	restore()
+}
+</script>
+<script src="resonate.ink/bowtie/lib.js"></script>
+</body>
+</html>
