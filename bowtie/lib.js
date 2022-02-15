@@ -113,7 +113,7 @@ function point3d(x,y,z) {
 }
 
 function point(x,y) {
-	ellipse(x,y)
+	ellipse(x,y,r=5)
 }
 
 function mupdate() {
