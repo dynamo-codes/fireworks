@@ -109,7 +109,7 @@ function flatten(x,y,z) {
 }
 
 function point3d(x,y,z) {
-	ellipse(flatten(x,y,z)[0],flatten(x,y,z)[1])
+	ellipse(flatten(x,y,z)[0],flatten(x,y,z)[1], r=5)
 }
 
 function point(x,y) {
