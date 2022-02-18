@@ -4,6 +4,8 @@ canvas.height = 500;
 canvas.width = 500;
 var mouseX = 0;
 var mousey = 0;
+document.addEventListener("mousemove", function(e){mouseX = ((e.clientX)-250)/20;mouseY = ((e.clientY)-250)/20;});
+
 var img = new Image("vignette.png");
 
 var settings = {
