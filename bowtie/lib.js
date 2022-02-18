@@ -65,7 +65,7 @@ function w(n) {
 	ctx.lineWidth = n;
 }
 
-function square(x,y,w=30,h=30) {
+function rect(x,y,w=30,h=30) {
 	ctx.fillRect(x,y,w,h)
 }
 
