@@ -8,13 +8,6 @@ document.addEventListener("mousemove", function(e){mouseX = ((e.clientX)-250)/20
 
 var img = new Image("vignette.png");
 
-var settings = {
-	clear: true,
-	noloop: false,
-	vignette: false,
-	bloom: false
-}
-
 var Canvas = {
 	fill: function() {
 		console.log(window.InnerWidth)
@@ -34,11 +27,7 @@ function randint(m, l) {
 }
 
 function noloop() {
-	settings.noloop = true;
-}
-
-function vignette() {
-	ctx.drawImage(img,0,0,canvas.width,canvas.height);
+	clearInterval(i)
 }
 
 function line(x,y,x1,y1) {
@@ -143,63 +132,9 @@ function point(x,y) {
 }
 
 function mupdate() {
-	if (settings.clear) {
+	if (clear) {
 	    ctx.clearRect(0, 0, canvas.width, canvas.height)
 	}
 	update();
-	vignette();
-	if (settings.noloop) {
-		clearInterval(i)
-	}
 }
 
-function render_cube() {
-	//cx-=1%20
-	//cy+=1%250
-	save()
-	translate(250,250)
-	color("black")
-
-	for (i=1; i<1; i++) {
-		point3d((m+10)-cx,(m+10)-cy,i)
-		//line3d((m+10)-cx,(m+10)-cy,5,(m-10)-cx,(m+10)-cy,i)
-		point3d((m-10)-cx,(m+10)-cy,i)
-		//line3d((m-10)-cx,(m+10)-cy,5,(m-10)-cx,(m-10)-cy,i)
-		point3d((m-10)-cx,(m-10)-cy,i)
-		//line3d((m-10)-cx,(m-10)-cy,5,(m+10)-cx,(m-10)-cy,i)
-		point3d((m+10)-cx,(m-10)-cy,i)
-		//line3d((m+10)-cx,(m-10)-cy,5, (m+10)-cx,(m+10)-cy,i)
-	}	
-	point3d((m+10)-cx,(m+10)-cy,5)
-	line3d((m+10)-cx,(m+10)-cy,5,(m-10)-cx,(m+10)-cy,5)
-	point3d((m-10)-cx,(m+10)-cy,5)
-	line3d((m-10)-cx,(m+10)-cy,5,(m-10)-cx,(m-10)-cy,5)
-	point3d((m-10)-cx,(m-10)-cy,5)
-	line3d((m-10)-cx,(m-10)-cy,5,(m+10)-cx,(m-10)-cy,5)
-	point3d((m+10)-cx,(m-10)-cy,5)
-	line3d((m+10)-cx,(m-10)-cy,5, (m+10)-cx,(m+10)-cy,5)
-	//restore()
-
-	//line3d((m+10)-cx,(m-10)-cy,5, (m-10)-cx,(m-10)-cy,5)
-	//line3d((m-10)-cx,(m+10)-cy,5, (m+10)-cx,(m-10)-cy,5)
-	//line3d((m+10)-cx,(m+10)-cy,5, (m-10)-cx,(m+10)-cy,5)
-	//line3d((m+10)-cx,(m+10)-cy,5, (m-10)-cx,(m-10)-cy,5)
-
-	//--------------------------\\
-
-	point3d((m+10)-cx,(m+10)-cy,8)
-	line3d((m+10)-cx,(m+10)-cy,8,(m-10)-cx,(m+10)-cy,8)
-	point3d((m-10)-cx,(m+10)-cy,8)
-	line3d((m-10)-cx,(m+10)-cy,8,(m-10)-cx,(m-10)-cy,8)
-	point3d((m-10)-cx,(m-10)-cy,8)
-	line3d((m-10)-cx,(m-10)-cy,8,(m+10)-cx,(m-10)-cy,8)
-	point3d((m+10)-cx,(m-10)-cy,8)
-	line3d((m+10)-cx,(m-10)-cy,8,(m+10)-cx,(m+10)-cy,8)
-
-	line3d((m+10)-cx,(m+10)-cy,5,(m+10)-cx,(m+10)-cy,8)
-	line3d((m-10)-cx,(m+10)-cy,5,(m-10)-cx,(m+10)-cy,8)
-	line3d((m-10)-cx,(m-10)-cy,5,(m-10)-cx,(m-10)-cy,8)
-	line3d((m+10)-cx,(m-10)-cy,5,(m+10)-cx,(m-10)-cy,8)
-	
-	restore()
-}
