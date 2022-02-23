@@ -48,8 +48,8 @@ function component(width, height, color, x, y) {
         ctx.fillStyle = color;
         if (color == "yellow") {
             ctx.shadowColor = color;
-            ctx.shadowBlur = parseInt(document.getElementById("inp").value);
-            //ctx.shadowBlur = 10;
+            //ctx.shadowBlur = parseInt(document.getElementById("inp").value);
+            ctx.shadowBlur = 10;
             ctx.shadowOffsetX = 0;
             ctx.shadowOffsetY = 0;
         }
