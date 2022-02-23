@@ -10,7 +10,7 @@ canvas {
 </style>
 </head>
 <body onload="startGame()">
-<input type="range" min="1" max="1000" id="i"></input>
+<input type="range" min="1" max="1000" id="inp"></input>
 <script>
 
 var myGamePiece;
@@ -45,7 +45,7 @@ function component(width, height, color, x, y) {
         ctx = myGameArea.context;
         ctx.fillStyle = color;
         ctx.shadowColor = color;
-        ctx.shadowBlur = parseInt(document.getElementById("i").value);
+        ctx.shadowBlur = parseInt(document.getElementById("inp").value);
         ctx.shadowOffsetX = 0;
         ctx.shadowOffsetY = 0;
         ctx.globalAlpha = 1.0;
