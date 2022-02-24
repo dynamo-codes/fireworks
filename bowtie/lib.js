@@ -8,6 +8,12 @@ var keys = [];
 
 document.addEventListener("mousemove", function(e){mouseX = e.screenX;mouseY = e.screenY;});
 
+document.addEventListener("click", function() {
+    if (mouse_press) {
+    	mouse_press()
+    }
+});
+
 var img = new Image("vignette.png");
 
 function vignette(o) {
