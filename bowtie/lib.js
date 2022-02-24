@@ -6,7 +6,7 @@ var mouseX = 0;
 var mousey = 0;
 var keys = [];
 
-document.addEventListener("mousemove", function(e){mouseX = e.clientX;mouseY = e.clientY;});
+document.addEventListener("mousemove", function(e){mouseX = e.screenX;mouseY = e.screenY;});
 
 var img = new Image("vignette.png");
 
