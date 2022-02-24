@@ -4,15 +4,28 @@ canvas.height = 500;
 canvas.width = 500;
 var mouseX = 0;
 var mousey = 0;
+var keys = [];
+
 document.addEventListener("mousemove", function(e){mouseX = ((e.clientX)-250)/20;mouseY = ((e.clientY)-250)/20;});
 
 var img = new Image("vignette.png");
+
+function vignette(o) {
+	ctx.globalAlpha = 0.8;
+    ctx.drawImage(img, -(o/2), -(o/2), canvas.width+o, canvas.height+o);
+}
 
 var Canvas = {
 	fill: function() {
 		console.log(window.InnerWidth)
 		canvas.width = window.InnerWidth
 		canvas.height = window.InnerHeight
+	}
+}
+
+document.onkeydown = function(e) {
+	if (keys[e.keyCode]) {
+		keys[e.keyCode]()
 	}
 }
 
@@ -47,6 +60,10 @@ function line3d(x,y,z,x1,y1,z1) {
 	ctx.fill()
 }
 
+function full() {
+	ctx.fillRect(0,0,canvas.width,canvas.height)
+}
+
 function color(c) {
 	ctx.fillStyle = c;
 	ctx.strokeStyle = c;
@@ -56,8 +73,20 @@ function w(n) {
 	ctx.lineWidth = n;
 }
 
-function rect(x,y,w=30,h=30) {
-	ctx.fillRect(x,y,w,h)
+function rect(x,y,w=30,h=30,emiss) {
+	if (emiss) {
+        ctx.globalAlpha = 0.009;
+
+        //for (i=this.width; i<this.width*4; i+=this.width/(parseInt(document.getElementById("inp").value))) {
+        //for (i=this.width; i<this.width*4; i+=10-parseInt(document.getElementById("inp").value)) {
+        for (i=w; i<w*4; i+=2) {
+            ctx.beginPath();
+            ctx.arc(x, y, i, 0, 2 * Math.PI);
+            ctx.fill();
+        }
+    }
+    ctx.globalAlpha = 1.0;
+    ctx.fillRect(x-(w/2),y-(h/2),w,h)
 }
 
 function translate(x,y) {
@@ -137,4 +166,3 @@ function mupdate() {
 	}
 	update();
 }
-
