@@ -11,7 +11,7 @@ document.addEventListener("mousemove", function(e){mouseX = ((e.clientX)-250)/20
 var img = new Image("vignette.png");
 
 function vignette(o) {
-	ctx.globalAlpha = 0.8;
+    ctx.globalAlpha = 0.8;
     ctx.drawImage(img, -(o/2), -(o/2), canvas.width+o, canvas.height+o);
 }
 
