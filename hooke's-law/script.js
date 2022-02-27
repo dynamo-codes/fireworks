@@ -78,15 +78,4 @@ function update() {
 	vel += acc;
 	y += vel;
 	vel *= 0.98;
-
-	// if (anchor.x > x+5) {
-	// 	xacc = 1;
-	// } else if (anchor.x < x-5) {
-	// 	xacc = -1;
-	// } else {
-	// 	xacc = 0;
-	// }
-	// xvel += xacc;
-	// x += xvel;
-	// xvel *= 0.99;
 }
